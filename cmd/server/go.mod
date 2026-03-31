@@ -1,4 +1,4 @@
-module {{.ModuleName}}
+module {{.config.ModuleName}}
 
 go 1.22
 

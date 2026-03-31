@@ -9,7 +9,6 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
@@ -38,11 +37,11 @@ func main() {
 	// GET / — renders templates/index.html with the configured greeting.
 	e.GET("/", func(c echo.Context) error {
 		return c.Render(http.StatusOK, "index.html", map[string]any{
-			"Message": "{{.Message}}",
-			"Port":    "{{.Port}}",
+			"Message": "{{.config.Message}}",
+			"Port":    "{{.config.Port}}",
 		})
 	})
 
 	// Start the server on the configured port.
-	e.Logger.Fatal(e.Start(":{{.Port}}"))
+	e.Logger.Fatal(e.Start(":{{.config.Port}}"))
 }
