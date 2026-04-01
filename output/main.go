@@ -9,11 +9,12 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 // renderer implements echo.Renderer using Go's html/template package.
-// It loads all *.html files from the templates/ directory.
+// It loads all *.html files from the templates/ directory at startup.
 type renderer struct {
 	t *template.Template
 }
@@ -37,11 +38,11 @@ func main() {
 	// GET / — renders templates/index.html with the configured greeting.
 	e.GET("/", func(c echo.Context) error {
 		return c.Render(http.StatusOK, "index.html", map[string]any{
-			"Message": "{{.config.Message}}",
-			"Port":    "{{.config.Port}}",
+			"Message": "{{.Message}}",
+			"Port":    "{{.Port}}",
 		})
 	})
 
 	// Start the server on the configured port.
-	e.Logger.Fatal(e.Start(":{{.config.Port}}"))
+	e.Logger.Fatal(e.Start(":{{.Port}}"))
 }

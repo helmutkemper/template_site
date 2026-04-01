@@ -1,0 +1,7 @@
+{
+  "vars": {
+    "Port":       "EchoServer.port",
+    "Message":    "EchoServer.message",
+    "ModuleName": "EchoServer.ModuleName"
+  }
+}
