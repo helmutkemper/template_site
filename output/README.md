@@ -7,12 +7,12 @@ go mod tidy
 go run .
 ```
 
-Open [http://localhost:{{.EchoServer.Port}}](http://localhost:{{.EchoServer.Port}})
+Open [http://localhost:{{.Port}}](http://localhost:{{.Port}})
 
 ## Configuration
 
-| Setting | Value                      |
-|---------|----------------------------|
-| Port    | {{.EchoServer.Port}}       |
-| Message | {{.EchoServer.Message}}    |
-| Module  | {{.EchoServer.ModuleName}} |
+| Setting | Value                   |
+|---------|-------------------------|
+| Port    | {{.Port}}      |
+| Message | {{.Message}}   |
+| Module  | {{.ModuleName}} |

@@ -1,4 +1,4 @@
-module {{.EchoServer.ModuleName}}
+module {{.ModuleName}}
 
 go 1.22
 

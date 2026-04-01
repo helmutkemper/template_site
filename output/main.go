@@ -37,11 +37,11 @@ func main() {
 	// GET / — renders templates/index.html with the configured greeting.
 	e.GET("/", func(c echo.Context) error {
 		return c.Render(http.StatusOK, "index.html", map[string]any{
-			"Message": "{{.EchoServer.Message}}",
-			"Port":    "{{.EchoServer.Port}}",
+			"Message": "{{.Message}}",
+			"Port":    "{{.Port}}",
 		})
 	})
 
 	// Start the server on the configured port.
-	e.Logger.Fatal(e.Start(":{{.EchoServer.Port}}"))
+	e.Logger.Fatal(e.Start(":{{.Port}}"))
 }
