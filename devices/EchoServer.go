@@ -18,11 +18,11 @@ import (
 type EchoServer struct {
 	// port is the HTTP listen port, received via wire from a ConstInt block.
 	// Not a prop — the value comes exclusively from the wire connection.
-	port int
+	port int `prop:"Port" default:"8080"`
 
 	// message is the greeting text, received via wire from a ConstString block.
 	// Not a prop — the value comes exclusively from the wire connection.
-	message string
+	message string `prop:"Message" default:"Hello world!"`
 
 	// ModuleName is the Go module name written into go.mod.
 	// Set in the Inspect panel; no wire needed.
