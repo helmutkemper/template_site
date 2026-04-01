@@ -18,7 +18,7 @@ import (
 type EchoServer struct {
 	// port is the HTTP listen port, received via wire from a ConstInt block.
 	// Not a prop — the value comes exclusively from the wire connection.
-	port int `prop:"Port" default:"443"`
+	port int `prop:"Port" default:"8080"`
 
 	// message is the greeting text, received via wire from a ConstString block.
 	// Not a prop — the value comes exclusively from the wire connection.
